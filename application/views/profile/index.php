@@ -1,3 +1,3 @@
 <?
-	echo "wtf";
+	print_r( $data);
 ?>

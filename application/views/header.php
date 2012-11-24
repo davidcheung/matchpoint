@@ -19,8 +19,8 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <?=ucfirst($username)?> <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="./profile/">Profile</a></li>
-                <li><a href="#">Court</a></li>
+                <li><a href="index">View Profile</a></li>
+                <li><a href="edit">Edit Profile</a></li>
                 <li><a href="#">Something else here</a></li>
                 <li class="divider"></li>
                 <li class="nav-header">Nav header</li>
