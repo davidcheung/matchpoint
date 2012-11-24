@@ -1,3 +1,6 @@
 <?
-	print_r( $data);
+	
+
+	echo $username;
+	echo $user_id;
 ?>
