@@ -19,14 +19,21 @@ class profile extends CI_Controller
 		}
 	}
 
-	function index( )
+
+	
+	function index() {
+		$this->view();
+	}
+
+
+	function view( )
 	{
 		
 			
 			$this->load->model( 'profile_model');
 			//$data['query'] = $this->profile_model->get_profile_by_userid( $data['user_id'] );			
 			
-			$this->load->view('profile/index', $this->data);
+			$this->load->view('profile/view', $this->data);
 			
 
 	}

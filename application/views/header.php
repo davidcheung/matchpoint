@@ -13,7 +13,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="#">MatchPoint</a>
+      <?=anchor('welcome','MatchPoint', array( 'class'=> 'brand'))?>
+
       <div class="nav-collapse collapse pull-right">
         <ul class="nav">
           <li class="<?=( uri_string() == "welcome" ? "active" : "")?>"><?=anchor('welcome','Home')?></li>
@@ -22,16 +23,16 @@
            <li class="dropdown <?=( $this->uri->segment(1) == "matches" ? "active" : "")?>">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Matches <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><?=anchor('matches/new','Create Match')?></li>
+              <li><?=anchor('matches/create','Create Match')?></li>
               
-              <li><?=anchor('matches/histroy','Match History')?></li>
+              <li><?=anchor('matches/history','Match History')?></li>
              
               
             </ul>
           </li>
 
 
-          <li class="dropdown">
+          <li class="dropdown <?=( $this->uri->segment(1) == "courts" ? "active" : "")?>">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Courts <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><?=anchor('courts/find','Find a Court')?></li>
@@ -45,7 +46,7 @@
           <li class="dropdown <?=( $this->uri->segment(1) == "profile" ? "active" : "")?>">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <?=ucfirst($username)?> <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><?=anchor('profile/index','View Profile')?></li>
+              <li><?=anchor('profile/view','View Profile')?></li>
               
               <li><?=anchor('profile/edit','Edit Profile')?></li>
               <li><?=anchor('profile/browse','Browse Players')?></li>
@@ -63,7 +64,7 @@
 
 
           <!-- <li>  <a href="#" class="navbar-link">Logged in as <?=ucfirst($username)?></a></li> -->
-          <li><?php echo anchor('/auth/logout/', 'Logout'); ?></li>
+          <li><?php echo anchor('auth/logout/', 'Log the fuck out'); ?></li>
 
         </ul>
 
