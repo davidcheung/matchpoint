@@ -8,7 +8,7 @@
 |--------------------------------------------------------------------------
 */
 $config['website_name'] = 'MatchPoint';
-$config['webmaster_email'] = 'webmaster@your-site.com';
+$config['webmaster_email'] = 'admin@davidc.org';
 
 /*
 |--------------------------------------------------------------------------

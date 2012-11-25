@@ -5,6 +5,8 @@ class profile_model extends CI_Model {
     var $title   = '';
     var $content = '';
     var $date    = '';
+    private $table_name         = 'profile_model';          // user accounts
+    
 
     function __construct()
     {
@@ -35,6 +37,11 @@ class profile_model extends CI_Model {
     }
 
    
+   function get_all ()
+   {
+         $query = $this->db->get($this->table_name);
+        return $query->result();
+   }
 }
 
 ?>

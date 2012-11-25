@@ -2,6 +2,7 @@
 
 class profile extends CI_Controller
 {
+	var $data;
 	function __construct()
 	{
 		parent::__construct();
@@ -11,36 +12,54 @@ class profile extends CI_Controller
 		if (!$this->tank_auth->is_logged_in()) {
 			redirect('/auth/login/');
 		} 
+		else{
+			$this->data['user_id']	= $this->tank_auth->get_user_id();
+			$this->data['username']	= $this->tank_auth->get_username();
+			$this->load->view('header', $this->data);
+		}
 	}
 
 	function index( )
 	{
 		
-			$data['user_id']	= $this->tank_auth->get_user_id();
-			$data['username']	= $this->tank_auth->get_username();
 			
 			$this->load->model( 'profile_model');
-			//$data['query'] = $this->profile_model->get_profile_by_userid( $data['user_id'] );
+			//$data['query'] = $this->profile_model->get_profile_by_userid( $data['user_id'] );			
 			
-			$this->load->view('header', $data);
-			$this->load->view('profile/index', $data);
-		
+			$this->load->view('profile/index', $this->data);
+			
 
 	}
 	
+
 	function edit() {
 
 		$this->load->helper('html');
 		$this->load->helper('form');
 
 
-		$data['user_id']	= $this->tank_auth->get_user_id();
-		$data['username']	= $this->tank_auth->get_username();
-		$this->load->view('header', $data);
-		$this->load->view('profile/edit',$data);
-		$this->load->model ( 'profile' );
+	
+		$this->load->view('profile/edit',$this->data);
+		
 			
 		
+	}
+
+	function browse () 
+	{
+		$this->load->model ( 'profile_model' );
+		$this->data['query'] = $this->profile_model->get_all();
+
+		$this->load->view('profile/browse',$this->data);
+	}
+
+	function player(  )
+	{
+		$this->load->model( 'profile_model');
+
+		$data['players'] = $this->profile_model->get('entries');
+		$this->load->view( 'profile/player');
+
 	}
 
 }

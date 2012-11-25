@@ -1,6 +1,2 @@
-<?
-	
 
-	echo $username;
-	echo $user_id;
-?>
+<p>This will load profile of  -  <?=$username?> </p>
