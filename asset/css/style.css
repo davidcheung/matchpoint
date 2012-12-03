@@ -1,0 +1,35 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
+@import url(http://fonts.googleapis.com/css?family=Sigmar+One);
+@import url(http://fonts.googleapis.com/css?family=Aclonica);
+
+body{
+    padding:0;
+    background:url( '../images/grey.png');
+    font-family: 'Open Sans', sans-serif; 
+}
+.navbar .brand{    
+    font-family: 'Sigmar One', cursive;
+
+    font-size: 25px;
+    
+    
+}
+.navbar .brand:hover{
+
+}
+#footer {
+  height:40px;
+  /*padding: 20px;*/
+  background-color: #000;
+  color: #fff;
+  font-size: 12px;
+  opacity:0.5;
+  background:url( '../images/random_grey_variations.png' );
+}
+.content{
+  padding:15px;
+}
+.footer-text{
+  line-height: 40px;
+  margin-right: 20px;
+}

@@ -1,5 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
+
 class profile extends CI_Controller
 {
 	var $data;
@@ -20,7 +21,7 @@ class profile extends CI_Controller
 	}
 
 
-	
+
 	function index() {
 		$this->view();
 	}
@@ -31,19 +32,27 @@ class profile extends CI_Controller
 		
 			
 			$this->load->model( 'profile_model');
-			//$data['query'] = $this->profile_model->get_profile_by_userid( $data['user_id'] );			
+			$this->data['query'] = $this->profile_model->get_profile_by_userid( $this->data['user_id'] );			
+			
+			$this->data['user_query'] =	 $this->profile_model->get_user_by_id( $this->data['user_id'] );			
+			
 			
 			$this->load->view('profile/view', $this->data);
-			
-
 	}
 	
+
+
+
 
 	function edit() {
 
 		$this->load->helper('html');
 		$this->load->helper('form');
 
+		$this->load->model( 'profile_model');
+			$this->data['query'] = $this->profile_model->get_profile_by_userid( $this->data['user_id'] );			
+			
+			$this->data['user_query'] =	 $this->profile_model->get_user_by_id( $this->data['user_id'] );			
 
 	
 		$this->load->view('profile/edit',$this->data);
@@ -66,6 +75,17 @@ class profile extends CI_Controller
 
 		$data['players'] = $this->profile_model->get('entries');
 		$this->load->view( 'profile/player');
+
+	}
+
+	function editSubmit(){
+
+		$this->data['post'] = $_POST;
+
+		$this->load->model ( 'profile_model' );
+		$this->profile_model->update_profile ( $this->data['post'] );
+		//$this->load->view( 'profile/test', $this->data);
+		redirect( 'profile/view');
 
 	}
 

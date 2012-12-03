@@ -2,8 +2,9 @@
 <link rel="stylesheet" href="<?=base_url('asset/bootstrap/css/bootstrap.min.css')?>"> <!--bootstrap-responsive.min.css-->
 <script type="text/javascript" src="<?=base_url('asset/bootstrap/js/bootstrap.min.js')?>"></script>
 
+<link rel="stylesheet" href="<?=base_url('asset/css/style.css')?>">
 <div style="text-align:center;" align="center">
-<div style="margin:0 auto;width:350px;text-align:left;">
+<div style="margin:0 auto;width:350px;text-align:left;margin-top:50px;">
 <?php
 
 $login = array(
@@ -40,7 +41,7 @@ $captcha = array(
 	'maxlength'	=> 8,
 );
 ?>
-<h2 class="form-signin-heading">Please login</h2>
+<h2 class="form-signin-heading">MatchPoint</h2>
 <?php echo form_open($this->uri->uri_string(), array( 'class'=> 'form-signin')); ?>
 <table>
 	<tr>

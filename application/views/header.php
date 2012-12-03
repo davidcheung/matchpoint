@@ -1,9 +1,27 @@
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<!DOCTYPE HTML>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.1/bootstrap.min.js"></script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.1/css/bootstrap-responsive.min.css">
-    
+    <link href='http://fonts.googleapis.com/css?family=Snowburst+One' rel='stylesheet' type='text/css'>
+     <link rel="stylesheet" href="<?=base_url('asset/css/style.css')?>">
 
+    <script type="text/javascript" src="<?=base_url('asset/jQuery-Easy-Pinned-Footer-master/jquery.ez-pinned-footer.js')?>"></script><!-- ez footer -->
+
+
+    <script type="text/javascript">
+    $(window).load(function() {
+        $("#footer").pinFooter();
+    });
+
+    $(window).resize(function() {
+        $("#footer").pinFooter();
+    });
+    </script>
+
+    <div id="footer" >
+      <div class="pull-right footer-text" >ITEC 4020 - Implementation</div>
+    </div>
 
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
@@ -64,7 +82,7 @@
 
 
           <!-- <li>  <a href="#" class="navbar-link">Logged in as <?=ucfirst($username)?></a></li> -->
-          <li><?php echo anchor('auth/logout/', 'Log the fuck out'); ?></li>
+          <li><?php echo anchor('auth/logout/', 'Logout'); ?></li>
 
         </ul>
 

@@ -1,4 +1,7 @@
 <?php
+
+echo "forget it ";exit();
+
 $login = array(
 	'name'	=> 'login',
 	'id'	=> 'login',
