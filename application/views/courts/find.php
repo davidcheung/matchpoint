@@ -26,7 +26,7 @@ function init (){
 	var latlng = new google.maps.LatLng ( profile_data[0]['longitude'] , profile_data[0]['latitude'] );
 	var myOptions = {
 	        streetViewControl: true,
-	        zoom: 15,
+	        zoom: 12,
 	        center: latlng,
 	        mapTypeId: google.maps.MapTypeId.ROADMAP,
 			scaleControlOptions:google.maps.ControlPosition.LEFT_CENTER,		
