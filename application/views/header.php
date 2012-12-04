@@ -54,6 +54,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Courts <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><?=anchor('courts/find','Find a Court')?></li>
+              <li><?=anchor('courts/create','Create a Court')?></li>
                           
               
             </ul>

@@ -43,7 +43,7 @@ $config['allow_registration'] = TRUE;
 $config['captcha_registration'] = FALSE;
 $config['email_activation'] = FALSE;
 $config['email_activation_expire'] = 60*60*24*2;
-$config['email_account_details'] = TRUE;
+$config['email_account_details'] = false;
 $config['use_username'] = TRUE;
 
 $config['username_min_length'] = 4;
