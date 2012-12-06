@@ -56,10 +56,15 @@ class profile_model extends CI_Model {
     }
 
    
-   function get_all ()
+   function get_all()
    {
-         $query = $this->db->get($this->table_name);
-        return $query->result();
+        /* $query = $this->db->get($this->table_name);
+        return $query->result();*/
+        return $this->database->s(  "SELECT a.* ,p.*, u.`email` FROM 
+        users u          
+        inner join `profile_model` p on (p.user_id = u.id) 
+        left join `address_model` a on (a.address_id = p.address_id) 
+        ");
    }
 
 

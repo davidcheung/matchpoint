@@ -27,10 +27,13 @@ class matches extends CI_Controller
 	
 
 	function create() {
-		
+
 		$this->load->helper('html');
 		$this->load->helper('form');
 
+		$this->load->model('bookings_model');
+		$this->data['bookings'] = $this->bookings_model->getBookingsByThisGuy( $this->data['user_id'] );
+		
 		$this->load->model('matches_model');
 
 		$this->load->view('matches/create', $this->data);

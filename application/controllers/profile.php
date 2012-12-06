@@ -61,7 +61,7 @@ class profile extends CI_Controller
 		
 	}
 
-	function browse () 
+	function browse() 
 	{
 		$this->load->model ( 'profile_model' );
 		$this->data['query'] = $this->profile_model->get_all();
