@@ -37,5 +37,13 @@ define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 
+//DATABSE
+define( "MATCHPOINT_DATABASE_HOST" , "localhost");
+define( "MATCHPOINT_DATABASE_DATABASE" , "ci");
+define( "MATCHPOINT_DATABASE_USERNAME" , "root");
+define( "MATCHPOINT_DATABASE_PASSWORD" , "");
+
+
+
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

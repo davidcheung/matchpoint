@@ -12,12 +12,11 @@ class dbConnection
 
 		//the configuration is HARDCODED right here
 		$databaseConfig = array (
-			"host" => "localhost",
-			"database" => "ci",
-			"username" => "root",
-			"password" => ""
+			"host" => MATCHPOINT_DATABASE_HOST,
+			"database" =>MATCHPOINT_DATABASE_DATABASE,
+			"username" =>MATCHPOINT_DATABASE_USERNAME,
+			"password" => MATCHPOINT_DATABASE_PASSWORD
 		);
-		
 
 
 

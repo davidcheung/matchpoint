@@ -45,13 +45,18 @@
 | the active record class
 */
 
+
+
+
+
+
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'ci';
+$db['default']['hostname'] = MATCHPOINT_DATABASE_HOST;
+$db['default']['username'] = MATCHPOINT_DATABASE_USERNAME;
+$db['default']['password'] = MATCHPOINT_DATABASE_PASSWORD;
+$db['default']['database'] = MATCHPOINT_DATABASE_DATABASE;
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
