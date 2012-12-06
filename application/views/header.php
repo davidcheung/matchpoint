@@ -56,7 +56,10 @@
               <li><?=anchor('courts/find','Find a Court')?></li>
               <li><?=anchor('courts/create','Create a Court')?></li>
                           
-              
+              <li class="divider"></li>
+
+              <li><?=anchor('bookings','Book a Court')?></li>
+              <li><?=anchor('bookings/browse','View Bookings')?></li>
             </ul>
           </li>
 

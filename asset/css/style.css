@@ -2,6 +2,7 @@
 @import url(http://fonts.googleapis.com/css?family=Sigmar+One);
 @import url(http://fonts.googleapis.com/css?family=Aclonica);
 
+
 body{
     padding:0;
     background:url( '../images/grey.png');
@@ -9,10 +10,8 @@ body{
 }
 .navbar .brand{    
     font-family: 'Sigmar One', cursive;
-
-    font-size: 25px;
-    
-    
+    letter-spacing: 3px;
+    font-size: 28px;
 }
 .navbar .brand:hover{
 
@@ -32,4 +31,7 @@ body{
 .footer-text{
   line-height: 40px;
   margin-right: 20px;
+}
+.navbar-inner{
+  height:43px; /*so the responsive design view doesnt look thick*/
 }

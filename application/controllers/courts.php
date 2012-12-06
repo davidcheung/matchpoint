@@ -61,10 +61,16 @@ class courts extends CI_Controller
 		return  $this->court_model->getSurfaceTypes();
 	}
 
-	function book(){
-		$this->data['post'] = $_GET;
-		$this->load->view( 'test' , $this->data); //this test view is used to display posted data
-	}
+	//function moved to bookings controller because it just makes more sense, duh
+	/*function book(){
+		$this->load->helper('html');
+		$this->load->helper('form');
+
+		$this->data['court_id'] = $_GET['court_id'];
+		$this->load->model('court_model');
+		$this->data['courts'] = $this->court_model->getCourts( );
+		$this->load->view( 'courts/book' , $this->data); 
+	}*/
 }
 
 /* End of file welcome.php */

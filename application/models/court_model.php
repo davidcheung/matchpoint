@@ -24,6 +24,9 @@ class court_model extends CI_Model {
         return $this->database->s( "SELECT * FROM court_model c left join address_model a on ( a.address_id = c.address_id ) ");
     }
 
+    function getCourtByID ( $court_id ){
+        return $this->database->s( "SELECT * FROM court_model c left join address_model a on ( a.address_id = c.address_id ) where `court_id`='$court_id'");
+    }
 
     function create_court( $post) {
 

@@ -1,1 +1,5 @@
-<h3>Create new match</h3>
+
+<div class="content">
+	<legend>Create a new Match</legend>
+	
+</div>

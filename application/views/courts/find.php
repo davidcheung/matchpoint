@@ -8,6 +8,7 @@ var profile = {};
 var map;
 var markers= {};
 var infoWindows = {};
+var profilewindow ;
 
 
 function personMarker(){
@@ -19,14 +20,28 @@ function personMarker(){
             title: "You"
         });
 	iconFile = 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'; 
-	profile['marker'].setIcon(iconFile) 
+	profile['marker'].setIcon(iconFile) ;
+	
+	/*setTimeout(function(){ profile['marker'].setAnimation(null); }, 1500);
+
+	profilewindow = new google.maps.InfoWindow({
+        content:  "You are here"
+    });
+
+
+    google.maps.event.addListener(profile['marker'], 'click', function() {
+
+    	close_all();
+
+     	profilewindow.open( profile['marker'].get('map'), profile['marker'] ) ;
+    });*/
 
 }
 function init (){
 	var latlng = new google.maps.LatLng ( profile_data[0]['longitude'] , profile_data[0]['latitude'] );
 	var myOptions = {
 	        streetViewControl: true,
-	        zoom: 12,
+	        zoom: 13,
 	        center: latlng,
 	        mapTypeId: google.maps.MapTypeId.ROADMAP,
 			scaleControlOptions:google.maps.ControlPosition.LEFT_CENTER,		
@@ -45,10 +60,11 @@ function addMarkers(){
             position: temp,
             map: map
         });
-
+		//markers[index] .setIcon( '<?=base_url('asset/images/tennis_ball.png')?>');
         infoWindows[index] = new google.maps.InfoWindow({
-          content:  "<b>" + data[index]['court_name'] +  "</b><br/>"  + data[index]['surface_type'] +
-          '<br/>' + '<a class="btn" onclick="bookThisCourt('+data[index]['court_id'] +')">Book this Court</a>'
+        content:  "<legend>" + data[index]['court_name'] +  '&nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-success">'+data[index]['surface_type'] +'</span>' + "</legend>"  
+		 +"Maybe will have some intro of the court later on ...<br/> or distance from profile address"+
+        '<br/><br/>' + '<a class="btn btn-inverse" style="float:right;" onclick="bookThisCourt('+data[index]['court_id'] +')">Book this Court</a>'
         });
 
 
@@ -66,7 +82,7 @@ function addMarkers(){
 	
 }
 function bookThisCourt( court_id){
-	var location =  '<?=base_url('courts/book/') ?>' + "?court_id=" + court_id ;
+	var location =  '<?=base_url('bookings/') ?>' + "?court_id=" + court_id ;
 	top.location = location ;
 }
 function close_all(){
@@ -85,7 +101,7 @@ $(function(){
 
 });
 </script>
-<div class="content">
+<div class="content" style="position:relative;">
 	<h3>Find Court</h3>
 		<?
 		/*require_once "application/libraries/EasyGoogleMap.class.php";
@@ -123,7 +139,8 @@ $(function(){
 	
 	
 	
-	<div id="map_canvas" style="width:800px;height:400px;" ></div>
+	<div id="map_canvas" style="width:800px;height:400px;position:relative;" ></div>
+	<div style="clear:both"></div>
 </div>
 
 
