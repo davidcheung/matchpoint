@@ -14,10 +14,13 @@
 	$channel['title'] = $xml->channel->title;
 	$channel['link']  = $xml->channel->link;
 
-
+	$count = 0;
+	$limit = 8;
 	foreach ($xml->channel->item as $item) 
 	{     
-
+		if ( $count > $limit ){
+			break;
+		}
 	    $article = array();
 	    $article['title'] = $item->title;
 	    $article['link'] = $item->link; 
@@ -30,7 +33,7 @@
 
 	    </div>
 	    <?
-
+	    $count++;
 	}	
 
 

@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+    <title>MatchPoint - ITEC 4010 Implementation</title>
     <link rel="icon" href="<?=base_url('asset/images/tennis_ball.ico')?>" type="image/gif">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.1/bootstrap.min.js"></script>
@@ -21,7 +22,7 @@
     </script>
 
     <div id="footer" >
-      <div class="pull-right footer-text" >ITEC 4020 - Implementation</div>
+      <div class="pull-right footer-text" >ITEC 4010 - Implementation</div>
     </div>
 
 <div class="navbar navbar-inverse navbar-fixed-top">
@@ -37,16 +38,11 @@
       <div class="nav-collapse collapse pull-right">
         <ul class="nav">
           <li class="<?=( uri_string() == "welcome" ? "active" : "")?>"><?=anchor('welcome','Home')?></li>
-
-
            <li class="dropdown <?=( $this->uri->segment(1) == "matches" ? "active" : "")?>">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Matches <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><?=anchor('matches/create','Create Match')?></li>
-              
+              <li><?=anchor('matches/create','Create Match')?></li>              
               <li><?=anchor('matches/history','Match History')?></li>
-             
-              
             </ul>
           </li>
 
@@ -56,7 +52,7 @@
             <ul class="dropdown-menu">
               <li><?=anchor('courts/find','Find a Court')?></li>
               <li><?=anchor('courts/create','Create a Court')?></li>
-                          
+              <li><?=anchor('courts/manage','Manage Courts')?></li>
               <li class="divider"></li>
 
               <li><?=anchor('bookings','Book a Court')?></li>

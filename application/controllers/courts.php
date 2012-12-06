@@ -61,6 +61,12 @@ class courts extends CI_Controller
 		return  $this->court_model->getSurfaceTypes();
 	}
 
+	function manage(){
+		$this->load->model('court_model');
+		$this->data['courts'] = $this->court_model->getCourts();
+		$this->load->view('courts/manage' , $this->data );
+	}
+
 	//function moved to bookings controller because it just makes more sense, duh
 	/*function book(){
 		$this->load->helper('html');
