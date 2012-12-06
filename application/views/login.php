@@ -5,7 +5,8 @@
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
-	<title>Welcome</title>
+	<title>MatchPoint</title>
+	<link rel="icon" href="<?=base_url('asset/images/tennis_ball.ico')?>" type="image/gif">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<link rel="stylesheet" href="<?=base_url('asset/bootstrap/css/bootstrap.min.css')?>"> <!--bootstrap-responsive.min.css-->
 	<script type="text/javascript" src="<?=base_url('asset/bootstrap/js/bootstrap.min.js')?>"></script>

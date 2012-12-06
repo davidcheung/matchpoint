@@ -26,6 +26,12 @@ echo form_open('bookings/submitBookings',array('onsubmit' =>"return validate_cou
 
 <table class="table">
 	<tr>
+		<th>Name</th>
+		<td>
+			<input type="text" name="bookings_model[bookings_desc]" id="" />
+		</td>
+	</tr>
+	<tr>
 		<th>Court</th>
 		<td>
 			<select name="bookings_model[court_id]" id="" >
@@ -65,6 +71,8 @@ echo form_open('bookings/submitBookings',array('onsubmit' =>"return validate_cou
 			</select>
 		</td>
 	</tr>
+	
+	
 	<tr>
 		<td colspan="2">
 			<input class="btn" type="submit" value="Submit"/>

@@ -33,16 +33,26 @@ class matches extends CI_Controller
 
 		$this->load->model('bookings_model');
 		$this->data['bookings'] = $this->bookings_model->getBookingsByThisGuy( $this->data['user_id'] );
-		
-		$this->load->model('matches_model');
+
+		$this->load->model ( 'profile_model' );
+		$this->data['profile'] =  $this->profile_model->get_all();	
+
+		//$this->load->model('matches_model');
 
 		$this->load->view('matches/create', $this->data);
 	}
 
 	function history(){
+		$this->load->model('matches_model');
+		$this->data['matches'] = $this->matches_model->getMatches_related_to_this_person( $this->data['user_id']);
 		$this->load->view('matches/history', $this->data);
 	}
+	
+	function createMatch( ){
+		$this->load->model('matches_model');
+		$this->matches_model->createMatch($_POST);
 
+	}
 
 
 }

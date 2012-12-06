@@ -7,7 +7,7 @@ class profile extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-
+		
 		$this->load->helper('url');
 		$this->load->library('tank_auth');
 		if (!$this->tank_auth->is_logged_in()) {
@@ -18,6 +18,7 @@ class profile extends CI_Controller
 			$this->data['username']	= $this->tank_auth->get_username();
 			$this->load->view('header', $this->data);
 		}
+		
 	}
 
 
@@ -88,6 +89,12 @@ class profile extends CI_Controller
 		redirect( 'profile/view');
 
 	}
+
+	function browsePlayersData(){
+		$this->load->model ( 'profile_model' );
+		return $this->profile_model->get_all();		
+	}
+	
 
 }
 

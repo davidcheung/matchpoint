@@ -51,7 +51,7 @@
 						    	</li>
 						    	
 						    	<li>
-						    		<a href="">Message Player</a>
+						    		<a href="mailto:<?=$value['email']?>">Message Player</a>
 						    	</li>
 						    	<li class="divider"></li>
 						    	<li>
