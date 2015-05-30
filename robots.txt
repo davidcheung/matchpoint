@@ -1,0 +1,4 @@
+# robots.txt for matchpoint repo
+
+User-agent: *
+Disallow: /*.sql$
